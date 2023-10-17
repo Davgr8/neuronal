@@ -16,16 +16,16 @@ class neuronal:
         suma_pesooculto=np.dot(self.bia_pesooculto, entradas) + self.bia_oculto
         activacion=self.sigmoid(suma_pesooculto)
 
-        suma_pesosalida=np.dot(self.bia_pesosalida, entradas) + self.bia_salida
+        suma_pesosalida=np.dot(self.bia_pesosalida, activacion) + self.bia_salida
         salida=self.sigmoid(suma_pesosalida)
 
         return salida
 
 if __name__ == '__main__':
-    funcio = neuronal()
+    funci = neuronal()
 
     resp = np.array([0, 1]).reshape((2, 1))
 
-    result = funcio.sumamatrices(resp)
+    result = funci.sumamatrices(resp)
 
     print("salida:",result)
